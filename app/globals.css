@@ -1,27 +1,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #ffa600;
+    --foreground: #020617 ;
+ 
+    --card: ;
+    --card-foreground: ;
+ 
+    --popover:#0f172a ;
+    --popover-foreground: #fff;
+ 
+    --primary: #020617;
+    --primary-foreground: #ffa600;
+ 
+    --secondary: #fff;
+    --secondary-foreground: #020617;
+ 
+    --muted: #fff;
+    --muted-foreground: #020617;
+ 
+    --accent: #fff;
+    --accent-foreground: #020617;
+ 
+    --destructive: #fff;
+    --destructive-foreground:#020617;
+ 
+    --border: #020617;
+    --input: #020617;
+    --ring: #020617;
+ 
+    --radius: 10px;
+  }
+ 
+  .dark {
+    --background: ;
+    --foreground: ;
+ 
+    --card: ;
+    --card-foreground: ;
+ 
+    --popover: ;
+    --popover-foreground: ;
+ 
+    --primary: ;
+    --primary-foreground: ;
+ 
+    --secondary: ;
+    --secondary-foreground: ;
+ 
+    --muted: ;
+    --muted-foreground: ;
+ 
+    --accent: ;
+    --accent-foreground: ;
+ 
+    --destructive: ;
+    --destructive-foreground: ;
+ 
+    --border: ;
+    --input: ;
+    --ring: ;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
+@layer base {
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
