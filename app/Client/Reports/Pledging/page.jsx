@@ -14,7 +14,7 @@ import Loader from "@/public/images/Loader.svg"
 import Image from 'next/image';
 
 
-export default function Dashboard() {
+export default function page() {
   const [data, setData] = useState([]);
   const { toast } = useToast();
   const [loading, setLoading] = useState(true);
@@ -22,13 +22,13 @@ export default function Dashboard() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/redemption`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/pledging`, {
           method: "GET"
         });
 
         if (res.ok) {
           const result = await res.json();
-          setData(result.Redemption);
+          setData(result.Pledging);
           setLoading(false);
           toast({
             title: "SS SOFTWARE",
@@ -55,7 +55,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <div className='xl:h-[649px] items-center flex justify-center'>
       {loading ? (
         <div>
           <Image

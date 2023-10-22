@@ -8,12 +8,11 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
 import React from 'react'
 import { Menu, MenuIcon } from 'lucide-react'
+import { signOut } from 'next-auth/react';
 
 export default function Navbar() {
-
     return (
         <>
             <div className="flex justify-around items-center mb-10 w-full h-28 bg-slate-950">
@@ -26,14 +25,14 @@ export default function Navbar() {
                         <DropdownMenu>
                             <DropdownMenuTrigger className='text-white'><Menu /></DropdownMenuTrigger>
                             <DropdownMenuContent>
-                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                <Link href={"/UserProfile"}><DropdownMenuItem>My Profile</DropdownMenuItem></Link>
                                 <DropdownMenuSeparator />
                                 <Link href={"/Admin/Pledging"}><DropdownMenuItem>Pledging</DropdownMenuItem></Link>
                                 <Link href={"/Admin/Redemption"}><DropdownMenuItem>Redemption</DropdownMenuItem></Link>
-                                <Link href={"/Reports"}><DropdownMenuItem>Reports</DropdownMenuItem></Link>
+                                <Link href={"/Admin/Reports"}><DropdownMenuItem>Reports</DropdownMenuItem></Link>
                                 <DropdownMenuSeparator />
-                                <Link href={"/Settings"}><DropdownMenuItem>Settings</DropdownMenuItem></Link>
-                                <Link href={"/Logout"}><DropdownMenuItem>Logout</DropdownMenuItem></Link>
+                                <Link href={"/Admin/Settings"} ><DropdownMenuItem>Settings</DropdownMenuItem></Link>
+                                <Link href={""} onClick={() => signOut()} ><DropdownMenuItem>Logout</DropdownMenuItem></Link>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>

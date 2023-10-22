@@ -14,7 +14,7 @@ import Loader from "@/public/images/Loader.svg"
 import Image from 'next/image';
 
 
-export default function Dashboard() {
+export default function page() {
   const [data, setData] = useState([]);
   const { toast } = useToast();
   const [loading, setLoading] = useState(true);
@@ -55,7 +55,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <div className='xl:h-[649px] items-center flex justify-center'>
       {loading ? (
         <div>
           <Image

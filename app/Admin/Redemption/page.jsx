@@ -44,14 +44,14 @@ export default function page() {
         toast({
           title: "SS SOFTWARE",
           variant: "destructive",
-          description: "Error While Saving Pledging Data?",
+          description: "Error While Saving Redemption Data?",
         })
       }
     } catch (error) {
       toast({
         title: "SS SOFTWARE",
         variant: "destructive",
-        description: "Error While Saving Pledging Data?",
+        description: "Error While Saving Redemption Data?",
       })
     } finally {
       setIsSubmitting(false);
